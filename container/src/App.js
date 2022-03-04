@@ -6,6 +6,7 @@ import {
 } from "@material-ui/core/styles/";
 
 import Header from "./components/Header";
+import Progress from "./components/Progress";
 
 const MarketingAppLazy = lazy(() => import("./components/MarketingApp"));
 const AuthAppLazy = lazy(() => import("./components/AuthApp"));
@@ -20,7 +21,7 @@ export default () => {
       <StylesProvider generateClassName={generateClassname}>
         <div>
           <Header />
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Progress />}>
             <Switch>
               <Route path="/auth" component={AuthAppLazy} />
               <Route path="/" component={MarketingAppLazy} />
