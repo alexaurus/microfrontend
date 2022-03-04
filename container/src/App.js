@@ -22,8 +22,8 @@ export default () => {
           <Header />
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
-              <Route path="/auth" component={AuthApp} />
-              <Route path="/" component={MarketingApp} />
+              <Route path="/auth" component={AuthAppLazy} />
+              <Route path="/" component={MarketingAppLazy} />
             </Switch>
           </Suspense>
         </div>
